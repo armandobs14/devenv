@@ -1,0 +1,14 @@
+version: '3'
+
+services: 
+  code:
+    container_name: vscode
+    image: codercom/code-server
+    user: root
+    envionments:
+      - UID="1000"
+      - GID="1000"
+    volumes:
+      - .:/home/coder/project:Z
+    ports:
+      - '1111:8080'
